@@ -5,16 +5,16 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
+    @Query private var items: [CreditCard]
 
     var body: some View {
         NavigationSplitView {
             List {
                 ForEach(items) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
+                        Text("\(item.description)")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        Text(item.cardNumber)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -36,7 +36,7 @@ struct ContentView: View {
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(timestamp: Date())
+            let newItem = CreditCard(id: (0...10000).randomElement()!, uid: UUID(), cardNumber: "1234-5678-9101-1121", expiry: Date().addingTimeInterval(-10000), type: CreditCardType.allCases.randomElement()!)
             modelContext.insert(newItem)
         }
     }
@@ -52,5 +52,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+        .modelContainer(for: CreditCard.self, inMemory: true)
 }

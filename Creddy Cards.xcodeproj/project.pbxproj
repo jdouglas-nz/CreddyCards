@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		E844610E2AFF1288005068FF /* Creddy_CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844610D2AFF1288005068FF /* Creddy_CardsApp.swift */; };
 		E84461102AFF1288005068FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844610F2AFF1288005068FF /* ContentView.swift */; };
-		E84461122AFF1288005068FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461112AFF1288005068FF /* Item.swift */; };
+		E84461122AFF1288005068FF /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461112AFF1288005068FF /* CreditCard.swift */; };
 		E84461142AFF1289005068FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84461132AFF1289005068FF /* Assets.xcassets */; };
 		E84461172AFF1289005068FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84461162AFF1289005068FF /* Preview Assets.xcassets */; };
 		E84461212AFF1289005068FF /* Creddy_CardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461202AFF1289005068FF /* Creddy_CardsTests.swift */; };
 		E844612B2AFF1289005068FF /* Creddy_CardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844612A2AFF1289005068FF /* Creddy_CardsUITests.swift */; };
 		E844612D2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844612C2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift */; };
+		E844613A2AFF17BD005068FF /* CreditCardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461392AFF17BD005068FF /* CreditCardResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		E844610A2AFF1288005068FF /* Creddy Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Creddy Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E844610D2AFF1288005068FF /* Creddy_CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsApp.swift; sourceTree = "<group>"; };
 		E844610F2AFF1288005068FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E84461112AFF1288005068FF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E84461112AFF1288005068FF /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		E84461132AFF1289005068FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E84461162AFF1289005068FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E844611C2AFF1289005068FF /* Creddy CardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Creddy CardsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +47,7 @@
 		E84461262AFF1289005068FF /* Creddy CardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Creddy CardsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E844612A2AFF1289005068FF /* Creddy_CardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsUITests.swift; sourceTree = "<group>"; };
 		E844612C2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E84461392AFF17BD005068FF /* CreditCardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +100,10 @@
 			children = (
 				E844610D2AFF1288005068FF /* Creddy_CardsApp.swift */,
 				E844610F2AFF1288005068FF /* ContentView.swift */,
-				E84461112AFF1288005068FF /* Item.swift */,
+				E84461112AFF1288005068FF /* CreditCard.swift */,
 				E84461132AFF1289005068FF /* Assets.xcassets */,
 				E84461152AFF1289005068FF /* Preview Content */,
+				E84461392AFF17BD005068FF /* CreditCardResponse.swift */,
 			);
 			path = "Creddy Cards";
 			sourceTree = "<group>";
@@ -261,8 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84461102AFF1288005068FF /* ContentView.swift in Sources */,
-				E84461122AFF1288005068FF /* Item.swift in Sources */,
+				E84461122AFF1288005068FF /* CreditCard.swift in Sources */,
 				E844610E2AFF1288005068FF /* Creddy_CardsApp.swift in Sources */,
+				E844613A2AFF17BD005068FF /* CreditCardResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
