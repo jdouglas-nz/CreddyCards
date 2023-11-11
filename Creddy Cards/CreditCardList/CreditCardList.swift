@@ -26,30 +26,15 @@ struct CreditCardList: View {
                         refresh()
                     }
                 case let .error(errorVm):
-                    ContentUnavailableView(label: {
-                        Label(errorVm.title, systemImage: "exclamationmark.warninglight.fill")
-                    },
-                    description: {
-                        Text(errorVm.description)
-                    }, 
-                    actions: {
-                        Button("Try again") {
-                            refresh()
-                        }
-                    })
-                    
+                    contentUnavailable(title: errorVm.title,
+                                       systemImageName: "exclamationmark.warninglight.fill",
+                                       description: errorVm.description
+                    )
                 case let .empty(title: title, description: description):
-                    ContentUnavailableView(label: {
-                        Label(title, systemImage: "creditcard")
-                    },
-                    description: {
-                        Text(description)
-                    },
-                    actions: {
-                        Button("refresh") {
-                            refresh()
-                        }
-                    })
+                    contentUnavailable(title: title,
+                                       systemImageName: "creditcard",
+                                       description: description
+                    )
                 }
             }
             .toolbar {
@@ -67,6 +52,20 @@ struct CreditCardList: View {
         }.task {
             refresh()
         }
+    }
+    
+    private func contentUnavailable(title: String, systemImageName: String, description: String) -> ContentUnavailableView<some View, some View, some View> {
+        ContentUnavailableView(label: {
+            Label(title, systemImage: systemImageName)
+        },
+        description: {
+            Text(description)
+        },
+        actions: {
+            Button("refresh") {
+                refresh()
+            }
+        })
     }
     
     private func refresh() {
