@@ -22,10 +22,34 @@ struct CreditCardList: View {
                         }
                         .onDelete(perform: deleteItems)
                     }
+                    .refreshable {
+                        refresh()
+                    }
                 case let .error(errorVm):
-                    ContentUnavailableView(errorVm.title, image: "exclamationmark.warninglight.fill", description: Text(errorVm.description))
+                    ContentUnavailableView(label: {
+                        Label(errorVm.title, systemImage: "exclamationmark.warninglight.fill")
+                    },
+                    description: {
+                        Text(errorVm.description)
+                    }, 
+                    actions: {
+                        Button("Try again") {
+                            refresh()
+                        }
+                    })
+                    
                 case let .empty(title: title, description: description):
-                    ContentUnavailableView(title, image: "creditcard", description: Text(description))
+                    ContentUnavailableView(label: {
+                        Label(title, systemImage: "creditcard")
+                    },
+                    description: {
+                        Text(description)
+                    },
+                    actions: {
+                        Button("refresh") {
+                            refresh()
+                        }
+                    })
                 }
             }
             .toolbar {
@@ -41,6 +65,12 @@ struct CreditCardList: View {
         } detail: {
             Text("Select an item")
         }.task {
+            refresh()
+        }
+    }
+    
+    private func refresh() {
+        Task {
             await viewModel.refresh()
         }
     }
