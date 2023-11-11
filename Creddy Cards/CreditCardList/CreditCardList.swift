@@ -3,18 +3,17 @@
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [CreditCard]
-
+struct CreditCardList: View {
+    var viewModel: ViewModel
+    
     var body: some View {
         NavigationSplitView {
             List {
-                ForEach(items) { item in
+                ForEach(viewModel.creditCards) { card in
                     NavigationLink {
-                        Text("\(item.description)")
+                        Text("\(card.description)")
                     } label: {
-                        Text(item.cardNumber)
+                        Text(card.cardNumber)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -31,26 +30,35 @@ struct ContentView: View {
             }
         } detail: {
             Text("Select an item")
+        }.task {
+            viewModel.refresh()
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = CreditCard(id: (0...10000).randomElement()!, uid: UUID(), cardNumber: "1234-5678-9101-1121", expiry: Date().addingTimeInterval(-10000), type: CreditCardType.allCases.randomElement()!)
-            modelContext.insert(newItem)
+            viewModel.addCreditCard()
         }
     }
 
-    private func deleteItems(offsets: IndexSet) {
+    private func deleteItems(at offsets: IndexSet) {
         withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
-            }
+            viewModel.deleteItems(at: offsets)
         }
     }
 }
 
 #Preview {
-    ContentView()
-        .modelContainer(for: CreditCard.self, inMemory: true)
+    CreditCardList(
+        viewModel: .init(
+            modelContext: .init(
+                try! ModelContainer(
+                    for: CreditCard.self,
+                    configurations: ModelConfiguration(
+                        isStoredInMemoryOnly: true
+                    )
+                )
+            )
+        )
+    )
 }

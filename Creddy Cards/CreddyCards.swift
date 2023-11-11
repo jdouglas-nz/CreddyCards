@@ -20,8 +20,7 @@ struct CreddyCards: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            CreditCardList(viewModel: .init(modelContext: .init(sharedModelContainer)))
         }
-        .modelContainer(sharedModelContainer)
     }
 }
