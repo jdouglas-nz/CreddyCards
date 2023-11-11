@@ -8,7 +8,7 @@ struct CreditCardResponse: Decodable {
         case uuid = "uid"
         case cardNumber = "credit_card_number"
         case expiry = "credit_card_expiry_date"
-        case type = "creidt_card_type"
+        case type = "credit_card_type"
     }
     
     let id: Int
