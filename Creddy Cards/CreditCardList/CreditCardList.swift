@@ -46,9 +46,9 @@ struct CreditCardList: View {
     }
 
     private func addItem() {
-            Task {
-                await viewModel.addCreditCard()
-            }
+        Task {
+            await viewModel.addCreditCard()
+        }
     }
 
     private func deleteItems(at offsets: IndexSet) {
