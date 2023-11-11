@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E844610E2AFF1288005068FF /* Creddy_CardsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844610D2AFF1288005068FF /* Creddy_CardsApp.swift */; };
+		E84461102AFF1288005068FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844610F2AFF1288005068FF /* ContentView.swift */; };
+		E84461122AFF1288005068FF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461112AFF1288005068FF /* Item.swift */; };
+		E84461142AFF1289005068FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84461132AFF1289005068FF /* Assets.xcassets */; };
+		E84461172AFF1289005068FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E84461162AFF1289005068FF /* Preview Assets.xcassets */; };
+		E84461212AFF1289005068FF /* Creddy_CardsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461202AFF1289005068FF /* Creddy_CardsTests.swift */; };
+		E844612B2AFF1289005068FF /* Creddy_CardsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844612A2AFF1289005068FF /* Creddy_CardsUITests.swift */; };
+		E844612D2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844612C2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E844611D2AFF1289005068FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E84461022AFF1288005068FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E84461092AFF1288005068FF;
+			remoteInfo = "Creddy Cards";
+		};
+		E84461272AFF1289005068FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E84461022AFF1288005068FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E84461092AFF1288005068FF;
+			remoteInfo = "Creddy Cards";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E844610A2AFF1288005068FF /* Creddy Cards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Creddy Cards.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E844610D2AFF1288005068FF /* Creddy_CardsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsApp.swift; sourceTree = "<group>"; };
+		E844610F2AFF1288005068FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E84461112AFF1288005068FF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		E84461132AFF1289005068FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E84461162AFF1289005068FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E844611C2AFF1289005068FF /* Creddy CardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Creddy CardsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E84461202AFF1289005068FF /* Creddy_CardsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsTests.swift; sourceTree = "<group>"; };
+		E84461262AFF1289005068FF /* Creddy CardsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Creddy CardsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E844612A2AFF1289005068FF /* Creddy_CardsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsUITests.swift; sourceTree = "<group>"; };
+		E844612C2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Creddy_CardsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E84461072AFF1288005068FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E84461192AFF1289005068FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E84461232AFF1289005068FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E84461012AFF1288005068FF = {
+			isa = PBXGroup;
+			children = (
+				E844610C2AFF1288005068FF /* Creddy Cards */,
+				E844611F2AFF1289005068FF /* Creddy CardsTests */,
+				E84461292AFF1289005068FF /* Creddy CardsUITests */,
+				E844610B2AFF1288005068FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E844610B2AFF1288005068FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E844610A2AFF1288005068FF /* Creddy Cards.app */,
+				E844611C2AFF1289005068FF /* Creddy CardsTests.xctest */,
+				E84461262AFF1289005068FF /* Creddy CardsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E844610C2AFF1288005068FF /* Creddy Cards */ = {
+			isa = PBXGroup;
+			children = (
+				E844610D2AFF1288005068FF /* Creddy_CardsApp.swift */,
+				E844610F2AFF1288005068FF /* ContentView.swift */,
+				E84461112AFF1288005068FF /* Item.swift */,
+				E84461132AFF1289005068FF /* Assets.xcassets */,
+				E84461152AFF1289005068FF /* Preview Content */,
+			);
+			path = "Creddy Cards";
+			sourceTree = "<group>";
+		};
+		E84461152AFF1289005068FF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				E84461162AFF1289005068FF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E844611F2AFF1289005068FF /* Creddy CardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E84461202AFF1289005068FF /* Creddy_CardsTests.swift */,
+			);
+			path = "Creddy CardsTests";
+			sourceTree = "<group>";
+		};
+		E84461292AFF1289005068FF /* Creddy CardsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E844612A2AFF1289005068FF /* Creddy_CardsUITests.swift */,
+				E844612C2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift */,
+			);
+			path = "Creddy CardsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E84461092AFF1288005068FF /* Creddy Cards */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E84461302AFF1289005068FF /* Build configuration list for PBXNativeTarget "Creddy Cards" */;
+			buildPhases = (
+				E84461062AFF1288005068FF /* Sources */,
+				E84461072AFF1288005068FF /* Frameworks */,
+				E84461082AFF1288005068FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Creddy Cards";
+			productName = "Creddy Cards";
+			productReference = E844610A2AFF1288005068FF /* Creddy Cards.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E844611B2AFF1289005068FF /* Creddy CardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E84461332AFF1289005068FF /* Build configuration list for PBXNativeTarget "Creddy CardsTests" */;
+			buildPhases = (
+				E84461182AFF1289005068FF /* Sources */,
+				E84461192AFF1289005068FF /* Frameworks */,
+				E844611A2AFF1289005068FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E844611E2AFF1289005068FF /* PBXTargetDependency */,
+			);
+			name = "Creddy CardsTests";
+			productName = "Creddy CardsTests";
+			productReference = E844611C2AFF1289005068FF /* Creddy CardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E84461252AFF1289005068FF /* Creddy CardsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E84461362AFF1289005068FF /* Build configuration list for PBXNativeTarget "Creddy CardsUITests" */;
+			buildPhases = (
+				E84461222AFF1289005068FF /* Sources */,
+				E84461232AFF1289005068FF /* Frameworks */,
+				E84461242AFF1289005068FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E84461282AFF1289005068FF /* PBXTargetDependency */,
+			);
+			name = "Creddy CardsUITests";
+			productName = "Creddy CardsUITests";
+			productReference = E84461262AFF1289005068FF /* Creddy CardsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E84461022AFF1288005068FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					E84461092AFF1288005068FF = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					E844611B2AFF1289005068FF = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E84461092AFF1288005068FF;
+					};
+					E84461252AFF1289005068FF = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = E84461092AFF1288005068FF;
+					};
+				};
+			};
+			buildConfigurationList = E84461052AFF1288005068FF /* Build configuration list for PBXProject "Creddy Cards" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E84461012AFF1288005068FF;
+			productRefGroup = E844610B2AFF1288005068FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E84461092AFF1288005068FF /* Creddy Cards */,
+				E844611B2AFF1289005068FF /* Creddy CardsTests */,
+				E84461252AFF1289005068FF /* Creddy CardsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E84461082AFF1288005068FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84461172AFF1289005068FF /* Preview Assets.xcassets in Resources */,
+				E84461142AFF1289005068FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E844611A2AFF1289005068FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E84461242AFF1289005068FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E84461062AFF1288005068FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84461102AFF1288005068FF /* ContentView.swift in Sources */,
+				E84461122AFF1288005068FF /* Item.swift in Sources */,
+				E844610E2AFF1288005068FF /* Creddy_CardsApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E84461182AFF1289005068FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E84461212AFF1289005068FF /* Creddy_CardsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E84461222AFF1289005068FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E844612B2AFF1289005068FF /* Creddy_CardsUITests.swift in Sources */,
+				E844612D2AFF1289005068FF /* Creddy_CardsUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E844611E2AFF1289005068FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E84461092AFF1288005068FF /* Creddy Cards */;
+			targetProxy = E844611D2AFF1289005068FF /* PBXContainerItemProxy */;
+		};
+		E84461282AFF1289005068FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E84461092AFF1288005068FF /* Creddy Cards */;
+			targetProxy = E84461272AFF1289005068FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		E844612E2AFF1289005068FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E844612F2AFF1289005068FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E84461312AFF1289005068FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Creddy Cards/Preview Content\"";
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jd.creddycees.Creddy-Cards";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E84461322AFF1289005068FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Creddy Cards/Preview Content\"";
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jd.creddycees.Creddy-Cards";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E84461342AFF1289005068FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jd.creddycees.Creddy-CardsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Creddy Cards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Creddy Cards";
+			};
+			name = Debug;
+		};
+		E84461352AFF1289005068FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jd.creddycees.Creddy-CardsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Creddy Cards.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Creddy Cards";
+			};
+			name = Release;
+		};
+		E84461372AFF1289005068FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jd.creddycees.Creddy-CardsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Creddy Cards";
+			};
+			name = Debug;
+		};
+		E84461382AFF1289005068FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YJ5F6A3DPP;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jd.creddycees.Creddy-CardsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Creddy Cards";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E84461052AFF1288005068FF /* Build configuration list for PBXProject "Creddy Cards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E844612E2AFF1289005068FF /* Debug */,
+				E844612F2AFF1289005068FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E84461302AFF1289005068FF /* Build configuration list for PBXNativeTarget "Creddy Cards" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E84461312AFF1289005068FF /* Debug */,
+				E84461322AFF1289005068FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E84461332AFF1289005068FF /* Build configuration list for PBXNativeTarget "Creddy CardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E84461342AFF1289005068FF /* Debug */,
+				E84461352AFF1289005068FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E84461362AFF1289005068FF /* Build configuration list for PBXNativeTarget "Creddy CardsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E84461372AFF1289005068FF /* Debug */,
+				E84461382AFF1289005068FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E84461022AFF1288005068FF /* Project object */;
+}
