@@ -7,15 +7,26 @@ struct CreditCardList: View {
     
     var body: some View {
         NavigationSplitView {
-            List {
-                ForEach(viewModel.creditCards) { card in
-                    NavigationLink {
-                        Text("\(card.description)")
-                    } label: {
-                        Text(card.cardNumber)
+            VStack {
+                switch viewModel.state {
+                case .loading:
+                    ProgressView()
+                case let .loaded(creditCards):
+                    List {
+                        ForEach(creditCards) { card in
+                            NavigationLink {
+                                Text("\(card.description)")
+                            } label: {
+                                Text(card.cardNumber)
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
                     }
+                case let .error(errorVm):
+                    ContentUnavailableView(errorVm.title, image: "exclamationmark.warninglight.fill", description: Text(errorVm.description))
+                case let .empty(title: title, description: description):
+                    ContentUnavailableView(title, image: "creditcard", description: Text(description))
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

@@ -7,7 +7,7 @@ extension CreditCardList {
     @Observable
     class ViewModel {
         private let repository: CreditCardRepository
-        private(set) var creditCards = [CreditCard]()
+        private(set) var state: ViewState<[CreditCard]> = .loading
         
         init(repository: CreditCardRepository) {
             self.repository = repository
@@ -31,6 +31,7 @@ extension CreditCardList {
         }
         
         func deleteItems(at offsets: IndexSet) async {
+            guard case let .loaded(creditCards) = state else { return }
             for index in offsets {
                 do {
                     try await repository.delete(card: creditCards[index])
@@ -44,9 +45,15 @@ extension CreditCardList {
         @MainActor
         func refresh() async {
             do {
-                creditCards = try await repository.getCreditCards()
+                state = .loading
+                let cards = try await repository.getCreditCards()
+                if cards.isEmpty {
+                    state = .empty(title: "Yo", description: "You got no cards to see my friend")
+                } else {
+                    state = .loaded(cards)
+                }
             } catch {
-                print("oooppsie! time to show this error somewhere")
+                state = .error(.init(title: "oof", description: "something went wrong. please try again."))
             }
         }
     }

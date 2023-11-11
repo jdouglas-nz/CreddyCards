@@ -18,6 +18,7 @@
 		E84461472AFF2393005068FF /* CreditCardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461462AFF2393005068FF /* CreditCardListViewModel.swift */; };
 		E84461492AFF29CF005068FF /* CreditCardListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84461482AFF29CF005068FF /* CreditCardListViewModelTests.swift */; };
 		E844614B2AFF2A6A005068FF /* CreditCardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844614A2AFF2A6A005068FF /* CreditCardRepository.swift */; };
+		E8A764CF2AFF5D0700B89176 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764CE2AFF5D0700B89176 /* ViewState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E84461462AFF2393005068FF /* CreditCardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModel.swift; sourceTree = "<group>"; };
 		E84461482AFF29CF005068FF /* CreditCardListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardListViewModelTests.swift; sourceTree = "<group>"; };
 		E844614A2AFF2A6A005068FF /* CreditCardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRepository.swift; sourceTree = "<group>"; };
+		E8A764CE2AFF5D0700B89176 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		E844610C2AFF1288005068FF /* Creddy Cards */ = {
 			isa = PBXGroup;
 			children = (
+				E8A764CD2AFF5CF100B89176 /* ViewState */,
 				E84461452AFF2223005068FF /* CreditCardList */,
 				E84461442AFF21BE005068FF /* Data */,
 				E84461432AFF21AD005068FF /* Model */,
@@ -161,6 +164,14 @@
 				E844614A2AFF2A6A005068FF /* CreditCardRepository.swift */,
 			);
 			path = CreditCardList;
+			sourceTree = "<group>";
+		};
+		E8A764CD2AFF5CF100B89176 /* ViewState */ = {
+			isa = PBXGroup;
+			children = (
+				E8A764CE2AFF5D0700B89176 /* ViewState.swift */,
+			);
+			path = ViewState;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84461102AFF1288005068FF /* CreditCardList.swift in Sources */,
+				E8A764CF2AFF5D0700B89176 /* ViewState.swift in Sources */,
 				E84461122AFF1288005068FF /* CreditCard.swift in Sources */,
 				E844610E2AFF1288005068FF /* CreddyCards.swift in Sources */,
 				E84461472AFF2393005068FF /* CreditCardListViewModel.swift in Sources */,
