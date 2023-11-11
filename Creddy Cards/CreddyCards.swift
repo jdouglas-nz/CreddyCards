@@ -4,7 +4,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct Creddy_CardsApp: App {
+struct CreddyCards: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             CreditCard.self,

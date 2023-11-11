@@ -1,9 +1,4 @@
 //
-//  CreditCardResponse.swift
-//  Creddy Cards
-//
-//  Created by John Douglas on 11/11/23.
-//
 
 import Foundation
 
