@@ -1,9 +1,4 @@
 //
-//  Creddy_CardsTests.swift
-//  Creddy CardsTests
-//
-//  Created by John Douglas on 11/11/23.
-//
 
 import XCTest
 @testable import Creddy_Cards
