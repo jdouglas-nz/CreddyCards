@@ -20,43 +20,54 @@ struct CreddyCards: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
-    
-    static var modelContext: ModelContext {
-        let c = ModelContext(sharedModelContainer)
-        c.autosaveEnabled = true
-        return c
-    }
-    
-    var jsonDecoder: JSONDecoder = {
-        let d = JSONDecoder()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "YYYY-MM-DD"
-        d.dateDecodingStrategy = .formatted(formatter)
-        return d
-    }()
 
     var body: some Scene {
         WindowGroup {
             TabView {
-                CreditCardList(viewModel: .init(
-                    repository: ConcreteCreditCardRepository(
-                        modelContext: Self.modelContext,
-                        network: ConcreteJSONBasedNetwork(
-                            jsonDecoder: jsonDecoder,
-                            baseUrl: URL(string: "https://random-data-api.com")!
-                        ),
-                        maxItemsFromNetwork: 100
-                        )
-                    )
-                )
-                .tabItem {
-                    Label("Cards", systemImage: "creditcard")
-                }
-                FavouriteCardsList(viewModel: .init(repository: ConcreteFavouriteCardsRepository(modelContext: Self.modelContext)))
-                .tabItem {
-                    Label("Favourites", systemImage: "heart")
-                }
+                cardsList(context: Self.sharedModelContainer.mainContext)
+                favouritesList(context: Self.sharedModelContainer.mainContext)
             }
+        }
+    }
+    
+    @ViewBuilder
+    func cardsList(context: ModelContext) -> some View {
+        let jsonDecoder: JSONDecoder = {
+            let d = JSONDecoder()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "YYYY-MM-DD"
+            d.dateDecodingStrategy = .formatted(formatter)
+            return d
+        }()
+        
+        CreditCardList(
+            viewModel: .init(
+                repository: ConcreteCreditCardRepository(
+                    modelContext: context,
+                    network: ConcreteJSONBasedNetwork(
+                        jsonDecoder: jsonDecoder,
+                        baseUrl: URL(string: "https://random-data-api.com")!
+                    ),
+                    maxItemsFromNetwork: 100
+                )
+            )
+        )
+        .tabItem {
+            Label("Cards", systemImage: "creditcard")
+        }
+    }
+    
+    @ViewBuilder
+    func favouritesList(context: ModelContext) -> some View {
+        FavouriteCardsList(
+            viewModel: .init(
+                repository: ConcreteFavouriteCardsRepository(
+                    modelContext: context
+                )
+            )
+        )
+        .tabItem {
+            Label("Favourites", systemImage: "heart")
         }
     }
 }

@@ -13,7 +13,7 @@ class ConcreteCreditCardRepository: CreditCardRepository {
     private let modelContext: ModelContext
     
     private let network: Network
-    private var remoteCreditCards = [CreditCardResponse]()
+    private var remoteCreditCards = [CreditCardData]()
     
     private let maxItemsFromNetwork: Int
     
@@ -44,7 +44,7 @@ class ConcreteCreditCardRepository: CreditCardRepository {
         return try modelContext.fetch(descriptor)
     }
     
-    private func getCardsFromNetwork() async throws -> [CreditCardResponse] {
+    private func getCardsFromNetwork() async throws -> [CreditCardData] {
         return if maxItemsFromNetwork == 1 {
            [try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")]
         } else {

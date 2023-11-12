@@ -2,7 +2,8 @@
 
 import Foundation
 
-struct CreditCardResponse: Decodable {
+/// The 'data structure' that represents a Credit Card from an API
+struct CreditCardData: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case uuid = "uid"

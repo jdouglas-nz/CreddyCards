@@ -23,7 +23,7 @@ class ConcreteCreditCardRepositoryTests: XCTestCase {
     )
     
     private let stubbedNetwork = StubbedNetwork(
-        expectedResource: CreditCardResponse(
+        expectedResource: CreditCardData(
             id: 100,
             uuid: UUID(),
             cardNumber: "randomCard",

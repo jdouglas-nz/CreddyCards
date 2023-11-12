@@ -9,6 +9,25 @@ struct CreditCardDetails: View {
     var viewModel: ViewModel
     
     var body: some View {
+        card
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    viewModel.toggleFavourite()
+                } label: {
+                    Label("Toggle Favourite", 
+                          systemImage: viewModel.creditCard.isFavourite ? "heart.fill" : "heart"
+                    )
+                    .labelStyle(IconOnlyLabelStyle())
+                }
+                .contentTransition(.symbolEffect(.replace))
+            }
+        }
+        .navigationTitle("Details")
+    }
+    
+    @ViewBuilder
+    var card: some View {
         VStack(spacing: scaling) {
             Text(viewModel.creditCard.type.displayText)
                     .font(.headline)
@@ -44,20 +63,6 @@ struct CreditCardDetails: View {
         .clipShape(RoundedRectangle(cornerRadius: scaling / 5), style: FillStyle())
         .shadow(radius: scaling / 2)
         .padding()
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Button {
-                    viewModel.toggleFavourite()
-                } label: {
-                    Label("Toggle Favourite", 
-                          systemImage: viewModel.creditCard.isFavourite ? "heart.fill" : "heart"
-                    )
-                        .labelStyle(IconOnlyLabelStyle())
-                }
-                .contentTransition(.symbolEffect(.replace))
-            }
-        }
-        .navigationTitle("Details")
     }
     
     

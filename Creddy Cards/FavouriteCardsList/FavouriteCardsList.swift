@@ -15,18 +15,7 @@ struct FavouriteCardsList: View {
                 case .error(let errorVm):
                     contentUnavailable(title: errorVm.title, systemImageName: "heart", description: errorVm.description)
                 case .loaded(let creditCards):
-                    List {
-                        ForEach(creditCards) { card in
-                            NavigationLink {
-                                CreditCardDetails(viewModel: .init(creditCard: card, repository: viewModel.repository))
-                            } label: {
-                                Text(card.cardNumber)
-                            }
-                        }
-                    }
-                    .refreshable {
-                        viewModel.refresh()
-                    }
+                    list(creditCards: creditCards)
                 case .empty(let title, let description):
                     contentUnavailable(title: title, systemImageName: "heart", description: description)
                 }
@@ -37,6 +26,22 @@ struct FavouriteCardsList: View {
             .navigationTitle("Favourites")
         } detail: {
             Text("Select an item")
+        }
+    }
+    
+    @ViewBuilder
+    func list(creditCards: [CreditCard]) -> some View {
+        List {
+            ForEach(creditCards) { card in
+                NavigationLink {
+                    CreditCardDetails(viewModel: .init(creditCard: card, repository: viewModel.repository))
+                } label: {
+                    Text(card.cardNumber)
+                }
+            }
+        }
+        .refreshable {
+            viewModel.refresh()
         }
     }
     

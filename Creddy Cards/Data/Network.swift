@@ -2,10 +2,13 @@
 
 import Foundation
 
+/// the (beginnings of) a Network abstraction
 protocol Network {
     func get<Resource: Decodable>(path: String) async throws -> Resource
+    // etc...
 }
 
+/// a customizable network class, that allows the consumer to customize the base url, and jsonDecoder
 class ConcreteJSONBasedNetwork: Network {
     
     private let session: URLSession

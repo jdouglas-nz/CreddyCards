@@ -1,6 +1,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CreditCardList: View {
         
@@ -13,27 +14,7 @@ struct CreditCardList: View {
                 case .loading:
                     ProgressView()
                 case let .loaded(creditCards):
-                    List {
-                        ForEach(Array(creditCards.keys).sorted(by: sortedBy), id: \.hashValue) { type in
-                            Section {
-                                ForEach(creditCards[type]!) { card in
-                                    NavigationLink {
-                                        CreditCardDetails(viewModel: .init(creditCard: card, repository: ConcreteFavouriteCardsRepository(modelContext: CreddyCards.modelContext)))
-                                    } label: {
-                                        Text(card.summarizedText)
-                                            .font(.body)
-                                    }
-                                }
-                            } header: {
-                                Text(type.displayText)
-                                    .font(.headline)
-                            }
-
-                        }
-                    }
-                    .refreshable {
-                        refresh()
-                    }
+                    groupedList(creditCards: creditCards, context: CreddyCards.sharedModelContainer.mainContext)
                 case let .error(errorVm):
                     contentUnavailable(title: errorVm.title,
                                        systemImageName: "exclamationmark.warninglight.fill",
@@ -50,6 +31,31 @@ struct CreditCardList: View {
         } detail: {
             Text("Select an item")
         }.task {
+            refresh()
+        }
+    }
+    
+    @ViewBuilder
+    private func groupedList(creditCards: [CreditCardType: [CreditCard]], context: ModelContext) -> some View {
+        List {
+            ForEach(Array(creditCards.keys).sorted(by: sortedBy), id: \.hashValue) { type in
+                Section {
+                    ForEach(creditCards[type]!) { card in
+                        NavigationLink {
+                            CreditCardDetails(viewModel: .init(creditCard: card, repository: ConcreteFavouriteCardsRepository(modelContext: context)))
+                        } label: {
+                            Text(card.summarizedText)
+                                .font(.body)
+                        }
+                    }
+                } header: {
+                    Text(type.displayText)
+                        .font(.headline)
+                }
+
+            }
+        }
+        .refreshable {
             refresh()
         }
     }
