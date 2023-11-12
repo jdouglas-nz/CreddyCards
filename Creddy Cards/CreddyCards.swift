@@ -43,9 +43,7 @@ struct CreddyCards: App {
                 .tabItem {
                     Label("Cards", systemImage: "creditcard")
                 }
-                ContentUnavailableView(label: {
-                    Label("No Favourites", systemImage: "heart")
-                })
+                FavouriteCardsList()
                 .tabItem {
                     Label("Favourites", systemImage: "heart")
                 }

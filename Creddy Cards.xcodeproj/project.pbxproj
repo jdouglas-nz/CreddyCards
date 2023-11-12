@@ -21,6 +21,7 @@
 		E8A764CF2AFF5D0700B89176 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764CE2AFF5D0700B89176 /* ViewState.swift */; };
 		E8A764D12AFF703700B89176 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764D02AFF703700B89176 /* Network.swift */; };
 		E8A764D32AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */; };
+		E8BD59FB2B00828F0092746C /* FavouriteCardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD59FA2B00828F0092746C /* FavouriteCardsList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E8A764CE2AFF5D0700B89176 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		E8A764D02AFF703700B89176 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCreditCardRepositoryTests.swift; sourceTree = "<group>"; };
+		E8BD59FA2B00828F0092746C /* FavouriteCardsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,8 +110,9 @@
 		E844610C2AFF1288005068FF /* Creddy Cards */ = {
 			isa = PBXGroup;
 			children = (
-				E8A764CD2AFF5CF100B89176 /* ViewState */,
+				E8BD59F92B0082710092746C /* FavouriteCardsList */,
 				E84461452AFF2223005068FF /* CreditCardList */,
+				E8A764CD2AFF5CF100B89176 /* ViewState */,
 				E84461442AFF21BE005068FF /* Data */,
 				E84461432AFF21AD005068FF /* Model */,
 				E844610D2AFF1288005068FF /* CreddyCards.swift */,
@@ -178,6 +181,14 @@
 				E8A764CE2AFF5D0700B89176 /* ViewState.swift */,
 			);
 			path = ViewState;
+			sourceTree = "<group>";
+		};
+		E8BD59F92B0082710092746C /* FavouriteCardsList */ = {
+			isa = PBXGroup;
+			children = (
+				E8BD59FA2B00828F0092746C /* FavouriteCardsList.swift */,
+			);
+			path = FavouriteCardsList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +323,7 @@
 			files = (
 				E84461102AFF1288005068FF /* CreditCardList.swift in Sources */,
 				E8A764CF2AFF5D0700B89176 /* ViewState.swift in Sources */,
+				E8BD59FB2B00828F0092746C /* FavouriteCardsList.swift in Sources */,
 				E8A764D12AFF703700B89176 /* Network.swift in Sources */,
 				E84461122AFF1288005068FF /* CreditCard.swift in Sources */,
 				E844610E2AFF1288005068FF /* CreddyCards.swift in Sources */,
