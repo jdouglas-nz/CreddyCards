@@ -15,12 +15,17 @@ struct CreddyCards: App {
         do {
             return try ModelContainer(for: CreditCard.self,
                                       migrationPlan: CreditCardMigrationPlan.self,
-                                      configurations: modelConfiguration
-            )
+                                      configurations: modelConfiguration)
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    var modelContext: ModelContext {
+        let c = ModelContext(sharedModelContainer)
+        c.autosaveEnabled = true
+        return c
+    }
     
     var jsonDecoder: JSONDecoder = {
         let d = JSONDecoder()
@@ -35,7 +40,7 @@ struct CreddyCards: App {
             TabView {
                 CreditCardList(viewModel: .init(
                     repository: ConcreteCreditCardRepository(
-                        modelContext: sharedModelContainer.mainContext,
+                        modelContext: modelContext,
                         network: ConcreteJSONBasedNetwork(
                             jsonDecoder: jsonDecoder,
                             baseUrl: URL(string: "https://random-data-api.com")!
@@ -52,7 +57,6 @@ struct CreddyCards: App {
                     Label("Favourites", systemImage: "heart")
                 }
             }
-            
         }
     }
 }

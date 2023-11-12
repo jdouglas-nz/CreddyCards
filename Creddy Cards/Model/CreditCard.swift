@@ -42,7 +42,7 @@ enum CreddyCardSchemaV2: VersionedSchema {
         let id: Int
         @Attribute(.unique)
         let uid: UUID
-        let cardNumber: String
+        var cardNumber: String
         let expiry: Date
         let type: CreditCardType
         var isFavourite: Bool
@@ -59,6 +59,11 @@ enum CreddyCardSchemaV2: VersionedSchema {
         var description: String {
             "card \(cardNumber) (\(type)) expires on \(expiry)"
         }
+        
+        var favouriteText: String {
+            isFavourite ? "❤️" : "💔"
+        }
+        
     }
 }
 
@@ -109,4 +114,33 @@ enum CreditCardType: String, Codable, CaseIterable {
     case solo
     case laser
     case dankort
+    
+    var displayText: String {
+        switch self {
+        case .switch:
+            "Switch"
+        case .discover:
+            "Discover"
+        case .maestro:
+            "Maestro"
+        case .mastercard:
+            "Mastercard"
+        case .jcb:
+            "JCB"
+        case .forbrugsforeningen:
+            "Forbrugsforeningen"
+        case .dinersClub:
+            "Diners Club"
+        case .americanExpress:
+            "American Express"
+        case .visa:
+            "VISA"
+        case .solo:
+            "SOLO"
+        case .laser:
+            "Laser"
+        case .dankort:
+            "Dankort"
+        }
+    }
 }

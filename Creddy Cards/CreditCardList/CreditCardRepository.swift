@@ -4,10 +4,10 @@ import Foundation
 import SwiftData
 
 protocol CreditCardRepository {
-    func add(card: CreditCard) async throws
-    func delete(card: CreditCard) async throws
     func getCreditCards() async throws -> [CreditCard]
+    func toggleFavourite(card: CreditCard) throws
 }
+
 
 class ConcreteCreditCardRepository: CreditCardRepository {
 
@@ -22,14 +22,6 @@ class ConcreteCreditCardRepository: CreditCardRepository {
         self.modelContext = modelContext
         self.network = network
         self.maxItemsFromNetwork = maxItemsFromNetwork
-    }
-    
-    func add(card: CreditCard) async throws {
-        modelContext.insert(card)
-    }
-    
-    func delete(card: CreditCard) async throws {
-        modelContext.delete(card)
     }
     
     func getCreditCards() async throws -> [CreditCard] {
@@ -49,7 +41,7 @@ class ConcreteCreditCardRepository: CreditCardRepository {
     }
     
     private func getCachedCards() throws -> [CreditCard] {
-        let descriptor = FetchDescriptor<CreditCard>(sortBy: [SortDescriptor(\.cardNumber, order: .forward)])
+        let descriptor = FetchDescriptor<CreditCard>(sortBy: [SortDescriptor(\.id, order: .forward)])
         return try modelContext.fetch(descriptor)
     }
     
@@ -59,6 +51,12 @@ class ConcreteCreditCardRepository: CreditCardRepository {
         } else {
             try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")
         }
+    }
+    
+    func toggleFavourite(card: CreditCard) throws {
+        card.isFavourite.toggle()
+        card.cardNumber = "pls"
+        try modelContext.save()
     }
 }
 
@@ -109,16 +107,9 @@ class StubbedCreditCardRepository: CreditCardRepository {
     
     var creditCards = [CreditCard]()
     
-    func add(card: CreditCard) async throws {
+    func toggleFavourite(card: CreditCard) throws {
         try throwErrorIfNeeded()
-        creditCards.append(card)
-    }
-    
-    func delete(card: CreditCard) async throws {
-        try throwErrorIfNeeded()
-        creditCards.removeAll { c in
-            c.uid == card.uid
-        }
+        card.isFavourite.toggle()
     }
     
     func getCreditCards() async throws -> [CreditCard] {

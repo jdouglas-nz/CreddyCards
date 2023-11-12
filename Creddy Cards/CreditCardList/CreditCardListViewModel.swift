@@ -6,7 +6,7 @@ extension CreditCardList {
  
     @Observable
     class ViewModel {
-        private let repository: CreditCardRepository
+        let repository: CreditCardRepository
         private(set) var state: ViewState<[CreditCard]> = .loading
         
         init(repository: CreditCardRepository) {

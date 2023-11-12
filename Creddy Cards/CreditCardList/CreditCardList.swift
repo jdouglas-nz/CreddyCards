@@ -16,9 +16,9 @@ struct CreditCardList: View {
                     List {
                         ForEach(creditCards) { card in
                             NavigationLink {
-                                Text("\(card.description)")
+                                CreditCardDetails(viewModel: .init(creditCard: card, repository: viewModel.repository))
                             } label: {
-                                Text(card.cardNumber)
+                                Text("\(card.cardNumber) \(card.favouriteText)")
                             }
                         }
                     }

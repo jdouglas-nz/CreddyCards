@@ -18,7 +18,7 @@ struct FavouriteCardsList: View {
                     List {
                         ForEach(creditCards) { card in
                             NavigationLink {
-                                Text("\(card.description)")
+                                Text(card.description)
                             } label: {
                                 Text(card.cardNumber)
                             }
@@ -42,4 +42,11 @@ struct FavouriteCardsList: View {
             Text(description)
         })
     }
+}
+
+
+#Preview {
+    FavouriteCardsList(
+        viewModel: .init()
+    )
 }
