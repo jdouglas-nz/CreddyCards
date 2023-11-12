@@ -26,5 +26,4 @@ class FavouriteCardsListViewModelTests: XCTestCase {
         guard case let .loaded(creditCards) = vm.state else { fatalError("View should be loaded after calling refresh in tests") }
         XCTAssertEqual(creditCards.first?.cardNumber, "first")
     }
-    
 }

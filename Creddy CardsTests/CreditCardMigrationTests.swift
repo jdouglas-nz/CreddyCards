@@ -21,7 +21,6 @@ class CreditCardMigrationTests: XCTestCase {
         await checkAndAssertOnMigrations()
     }
     
-    
     // TODO: come back and get this working... maybe.
     // So, the idea I want to test is,
     // preseed SwiftData with a V1 version, save to disk, then reload Container using the V2 schema, and make sure all is fine.
@@ -69,5 +68,4 @@ class CreditCardMigrationTests: XCTestCase {
         let config = ModelConfiguration(name, schema: schema)
         return try! ModelContainer(for: schema, migrationPlan: migrationPlan, configurations: config)
     }
-    
 }
