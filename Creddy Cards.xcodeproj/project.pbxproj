@@ -26,6 +26,8 @@
 		E8BD59FF2B0096FC0092746C /* CreditCardMigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD59FE2B0096FC0092746C /* CreditCardMigrationTests.swift */; };
 		E8BD5A022B00A2030092746C /* CreditCardDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD5A012B00A2030092746C /* CreditCardDetails.swift */; };
 		E8BD5A042B00C0C80092746C /* CreditCardDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD5A032B00C0C80092746C /* CreditCardDetailsViewModel.swift */; };
+		E8BD5A062B00C9A40092746C /* FavouriteCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD5A052B00C9A40092746C /* FavouriteCardsRepository.swift */; };
+		E8BD5A082B00CF500092746C /* FavouriteCardsListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD5A072B00CF500092746C /* FavouriteCardsListViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		E8BD59FE2B0096FC0092746C /* CreditCardMigrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardMigrationTests.swift; sourceTree = "<group>"; };
 		E8BD5A012B00A2030092746C /* CreditCardDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDetails.swift; sourceTree = "<group>"; };
 		E8BD5A032B00C0C80092746C /* CreditCardDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDetailsViewModel.swift; sourceTree = "<group>"; };
+		E8BD5A052B00C9A40092746C /* FavouriteCardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsRepository.swift; sourceTree = "<group>"; };
+		E8BD5A072B00CF500092746C /* FavouriteCardsListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsListViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 				E84461482AFF29CF005068FF /* CreditCardListViewModelTests.swift */,
 				E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */,
 				E8BD59FE2B0096FC0092746C /* CreditCardMigrationTests.swift */,
+				E8BD5A072B00CF500092746C /* FavouriteCardsListViewModelTests.swift */,
 			);
 			path = "Creddy CardsTests";
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 			children = (
 				E8BD59FA2B00828F0092746C /* FavouriteCardsList.swift */,
 				E8BD59FC2B0083460092746C /* FavouriteCardsListViewModel.swift */,
+				E8BD5A052B00C9A40092746C /* FavouriteCardsRepository.swift */,
 			);
 			path = FavouriteCardsList;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 			files = (
 				E84461102AFF1288005068FF /* CreditCardList.swift in Sources */,
 				E8A764CF2AFF5D0700B89176 /* ViewState.swift in Sources */,
+				E8BD5A062B00C9A40092746C /* FavouriteCardsRepository.swift in Sources */,
 				E8BD59FB2B00828F0092746C /* FavouriteCardsList.swift in Sources */,
 				E8BD5A022B00A2030092746C /* CreditCardDetails.swift in Sources */,
 				E8A764D12AFF703700B89176 /* Network.swift in Sources */,
@@ -362,6 +369,7 @@
 			files = (
 				E8BD59FF2B0096FC0092746C /* CreditCardMigrationTests.swift in Sources */,
 				E84461492AFF29CF005068FF /* CreditCardListViewModelTests.swift in Sources */,
+				E8BD5A082B00CF500092746C /* FavouriteCardsListViewModelTests.swift in Sources */,
 				E8A764D32AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,7 @@ struct FavouriteCardsList: View {
     var body: some View {
         NavigationSplitView {
             VStack {
-                switch viewModel.viewState {
+                switch viewModel.state {
                 case .loading:
                     ProgressView()
                 case .error(let errorVm):
@@ -24,9 +24,15 @@ struct FavouriteCardsList: View {
                             }
                         }
                     }
+                    .refreshable {
+                        viewModel.refresh()
+                    }
                 case .empty(let title, let description):
                     contentUnavailable(title: title, systemImageName: "heart", description: description)
                 }
+            }
+            .task {
+                viewModel.refresh()
             }
             .navigationTitle("Favourites")
         } detail: {
@@ -40,13 +46,17 @@ struct FavouriteCardsList: View {
         },
         description: {
             Text(description)
-        })
+        }) {
+            Button("refresh") {
+                viewModel.refresh()
+            }
+        }
     }
 }
 
 
 #Preview {
     FavouriteCardsList(
-        viewModel: .init()
+        viewModel: .init(repository: StubbedFavouriteCardsRepository(cards: []))
     )
 }

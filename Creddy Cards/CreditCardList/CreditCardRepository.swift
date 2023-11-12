@@ -55,7 +55,6 @@ class ConcreteCreditCardRepository: CreditCardRepository {
     
     func toggleFavourite(card: CreditCard) throws {
         card.isFavourite.toggle()
-        card.cardNumber = "pls"
         try modelContext.save()
     }
 }
