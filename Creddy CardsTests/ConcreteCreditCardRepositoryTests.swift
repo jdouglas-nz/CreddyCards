@@ -38,7 +38,8 @@ class ConcreteCreditCardRepositoryTests: XCTestCase {
             uid: UUID(),
             cardNumber: "existing",
             expiry: Date(),
-            type: .americanExpress)
+            type: .americanExpress,
+            isFavourite: false)
         )
     }
     

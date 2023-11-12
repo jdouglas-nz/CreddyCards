@@ -5,6 +5,7 @@ import SwiftData
 
 @main
 struct CreddyCards: App {
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             CreditCard.self,
@@ -12,7 +13,10 @@ struct CreddyCards: App {
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
         do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
+            return try ModelContainer(for: CreditCard.self,
+                                      migrationPlan: CreditCardMigrationPlan.self,
+                                      configurations: modelConfiguration
+            )
         } catch {
             fatalError("Could not create ModelContainer: \(error)")
         }

@@ -23,6 +23,7 @@
 		E8A764D32AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */; };
 		E8BD59FB2B00828F0092746C /* FavouriteCardsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD59FA2B00828F0092746C /* FavouriteCardsList.swift */; };
 		E8BD59FD2B0083460092746C /* FavouriteCardsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD59FC2B0083460092746C /* FavouriteCardsListViewModel.swift */; };
+		E8BD59FF2B0096FC0092746C /* CreditCardMigrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BD59FE2B0096FC0092746C /* CreditCardMigrationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCreditCardRepositoryTests.swift; sourceTree = "<group>"; };
 		E8BD59FA2B00828F0092746C /* FavouriteCardsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsList.swift; sourceTree = "<group>"; };
 		E8BD59FC2B0083460092746C /* FavouriteCardsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteCardsListViewModel.swift; sourceTree = "<group>"; };
+		E8BD59FE2B0096FC0092746C /* CreditCardMigrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardMigrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			children = (
 				E84461482AFF29CF005068FF /* CreditCardListViewModelTests.swift */,
 				E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */,
+				E8BD59FE2B0096FC0092746C /* CreditCardMigrationTests.swift */,
 			);
 			path = "Creddy CardsTests";
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8BD59FF2B0096FC0092746C /* CreditCardMigrationTests.swift in Sources */,
 				E84461492AFF29CF005068FF /* CreditCardListViewModelTests.swift in Sources */,
 				E8A764D32AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift in Sources */,
 			);

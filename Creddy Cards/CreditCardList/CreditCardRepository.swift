@@ -42,7 +42,8 @@ class ConcreteCreditCardRepository: CreditCardRepository {
                     uid: c.uuid,
                     cardNumber: c.cardNumber,
                     expiry: c.expiry,
-                    type: .init(type: c.type)
+                    type: .init(type: c.type), 
+                    isFavourite: false
                 )
         })
     }

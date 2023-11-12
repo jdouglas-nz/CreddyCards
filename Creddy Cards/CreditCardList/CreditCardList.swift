@@ -3,6 +3,7 @@
 import SwiftUI
 
 struct CreditCardList: View {
+    
     var viewModel: ViewModel
     
     var body: some View {
@@ -20,7 +21,6 @@ struct CreditCardList: View {
                                 Text(card.cardNumber)
                             }
                         }
-                        .onDelete(perform: deleteItems)
                     }
                     .refreshable {
                         refresh()
@@ -35,16 +35,6 @@ struct CreditCardList: View {
                                        systemImageName: "creditcard",
                                        description: description
                     )
-                }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
                 }
             }
             .navigationTitle("Cards")
@@ -72,18 +62,6 @@ struct CreditCardList: View {
     private func refresh() {
         Task {
             await viewModel.refresh()
-        }
-    }
-
-    private func addItem() {
-        Task {
-            await viewModel.addCreditCard()
-        }
-    }
-
-    private func deleteItems(at offsets: IndexSet) {
-        Task {
-            await viewModel.deleteItems(at: offsets)
         }
     }
 }

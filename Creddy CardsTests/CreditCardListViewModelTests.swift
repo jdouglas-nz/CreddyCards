@@ -9,22 +9,8 @@ class CreditCardListViewModelTests: XCTestCase {
     private var repository: StubbedCreditCardRepository! = .init()
     private lazy var viewModel: CreditCardList.ViewModel! = .init(repository: repository)
     
-    func test_addCreditCard_increasesNumber() async {
-        XCTAssertEqual(repository.creditCards.count, 0)
-        await viewModel.addCreditCard()
-        XCTAssertEqual(repository.creditCards.count, 1)
-    }
-    
-    func test_deleteCreditCard_decreasesNumber() async {
-        repository.creditCards.append(.init(id: 1, uid: UUID(), cardNumber: "", expiry: Date(), type: .americanExpress))
-        XCTAssertEqual(repository.creditCards.count, 1)
-        await viewModel.refresh()
-        await viewModel.deleteItems(at: .init(integer: 0))
-        XCTAssertEqual(repository.creditCards.count, 0)
-    }
-    
     func test_refresh_updatesViewModel() async {
-        repository.creditCards.append(.init(id: 1, uid: UUID(), cardNumber: "", expiry: Date(), type: .americanExpress))
+        repository.creditCards.append(.init(id: 1, uid: UUID(), cardNumber: "", expiry: Date(), type: .americanExpress, isFavourite: false))
         XCTAssertEqual(viewModel.state, .loading)
         await viewModel.refresh()
         guard case let .loaded(creditCards) = viewModel.state else { fatalError("View should be loaded after calling refresh in tests") }
