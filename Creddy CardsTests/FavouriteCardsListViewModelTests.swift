@@ -6,7 +6,7 @@ import SwiftData
 @testable import Creddy_Cards
 
 class FavouriteCardsListViewModelTests: XCTestCase {
-    
+ 
     func test_noCards_showsEmptyState() {
         let vm = FavouriteCardsList.ViewModel(repository: StubbedFavouriteCardsRepository(cards: []))
         XCTAssertEqual(vm.state, .empty(title: "No Favourites for you! 💔", description: "You'll need to ❤️ a card from the Cards list for it to show up here."))

@@ -92,7 +92,7 @@ class StubbedCreditCardRepository: CreditCardRepository {
         case testError
     }
     
-    private var creditCards: [CreditCard]
+    var creditCards: [CreditCard]
     private let throwError: Bool
     
     init(cards: [CreditCard] = [], throwError: Bool = false) {

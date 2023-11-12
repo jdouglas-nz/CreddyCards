@@ -30,10 +30,9 @@ class CreditCardListViewModelTests: XCTestCase {
     }
 }
 
-
-extension ViewState: Equatable where LoadedContent == [CreditCard] {
+extension ViewState: Equatable where LoadedContent: Equatable {
     
-    public static func == (lhs: Creddy_Cards.ViewState<LoadedContent>, rhs: Creddy_Cards.ViewState<LoadedContent>) -> Bool {
+    public static func == (lhs: ViewState, rhs: ViewState) -> Bool {
         switch (lhs, rhs) {
         case (.loading, .loading):
             return true
