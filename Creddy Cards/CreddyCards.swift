@@ -43,7 +43,7 @@ struct CreddyCards: App {
                 .tabItem {
                     Label("Cards", systemImage: "creditcard")
                 }
-                FavouriteCardsList()
+                FavouriteCardsList(viewModel: .init())
                 .tabItem {
                     Label("Favourites", systemImage: "heart")
                 }
