@@ -3,7 +3,7 @@
 import Foundation
 
 protocol Network {
-    func get<Resource: Decodable>(path: String) async throws -> Resource 
+    func get<Resource: Decodable>(path: String) async throws -> Resource
 }
 
 class ConcreteJSONBasedNetwork: Network {
@@ -18,11 +18,6 @@ class ConcreteJSONBasedNetwork: Network {
         self.jsonDecoder = jsonDecoder
     }
     
-    func get<Resource: Decodable>(path: String) async throws -> Resource {
-        let (data, _) = try await session.data(for: request(path: path, method: .get))
-        return try jsonDecoder.decode(Resource.self, from: data)
-    }
-    
     private func request(path: String, method: HttpVerb) -> URLRequest {
         let url = URL(string: path, relativeTo: baseUrl)!
         var req = URLRequest(url: url)
@@ -30,8 +25,35 @@ class ConcreteJSONBasedNetwork: Network {
         return req
     }
     
+    func get<Resource>(path: String) async throws -> Resource where Resource : Decodable {
+        let (data, _) = try await session.data(for: request(path: path, method: .get))
+        return try jsonDecoder.decode(Resource.self, from: data)
+    }
+    
     enum HttpVerb: String {
         case get
         // etc..
     }
 }
+
+#if DEBUG
+class StubbedNetwork<ExpectedResource: Decodable> {
+    
+    typealias Resource = ExpectedResource
+    
+    let resource: Resource
+    
+    init(expectedResource: Resource) {
+        self.resource = expectedResource
+    }
+}
+
+extension StubbedNetwork: Network {
+    
+    func get<Resource>(path: String) async throws -> Resource {
+        resource as! Resource
+    }
+    
+}
+
+#endif

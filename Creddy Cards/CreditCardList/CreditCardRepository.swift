@@ -33,14 +33,10 @@ class ConcreteCreditCardRepository: CreditCardRepository {
     }
     
     func getCreditCards() async throws -> [CreditCard] {
-        if maxItemsFromNetwork == 1 {
-            remoteCreditCards = [try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")]
-        } else {
-            remoteCreditCards = try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")
-        }
+        let cachedCards = try getCachedCards()
+        let cardsFromNetwork = try await getCardsFromNetwork()
         
-        let descriptor = FetchDescriptor<CreditCard>(sortBy: [SortDescriptor(\.cardNumber, order: .forward)])
-        return try modelContext.fetch(descriptor) + remoteCreditCards.map({ c in
+        return cachedCards + cardsFromNetwork.map({ c in
                 .init(
                     id: c.id,
                     uid: c.uuid,
@@ -50,9 +46,23 @@ class ConcreteCreditCardRepository: CreditCardRepository {
                 )
         })
     }
+    
+    private func getCachedCards() throws -> [CreditCard] {
+        let descriptor = FetchDescriptor<CreditCard>(sortBy: [SortDescriptor(\.cardNumber, order: .forward)])
+        return try modelContext.fetch(descriptor)
+    }
+    
+    private func getCardsFromNetwork() async throws -> [CreditCardResponse] {
+        return if maxItemsFromNetwork == 1 {
+           [try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")]
+        } else {
+            try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")
+        }
+    }
 }
 
 fileprivate extension CreditCardType {
+    
     init(type: CreditCardTypeResponse) {
         switch type {
         case .switch:
@@ -85,6 +95,7 @@ fileprivate extension CreditCardType {
 
 #if DEBUG
 class StubbedCreditCardRepository: CreditCardRepository {
+    
     enum StubError: Error {
         case testError
     }

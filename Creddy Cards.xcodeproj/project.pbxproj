@@ -20,6 +20,7 @@
 		E844614B2AFF2A6A005068FF /* CreditCardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E844614A2AFF2A6A005068FF /* CreditCardRepository.swift */; };
 		E8A764CF2AFF5D0700B89176 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764CE2AFF5D0700B89176 /* ViewState.swift */; };
 		E8A764D12AFF703700B89176 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764D02AFF703700B89176 /* Network.swift */; };
+		E8A764D32AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E844614A2AFF2A6A005068FF /* CreditCardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardRepository.swift; sourceTree = "<group>"; };
 		E8A764CE2AFF5D0700B89176 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		E8A764D02AFF703700B89176 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcreteCreditCardRepositoryTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				E84461482AFF29CF005068FF /* CreditCardListViewModelTests.swift */,
+				E8A764D22AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift */,
 			);
 			path = "Creddy CardsTests";
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E84461492AFF29CF005068FF /* CreditCardListViewModelTests.swift in Sources */,
+				E8A764D32AFF7DF300B89176 /* ConcreteCreditCardRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
