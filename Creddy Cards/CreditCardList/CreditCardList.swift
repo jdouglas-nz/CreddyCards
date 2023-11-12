@@ -47,6 +47,7 @@ struct CreditCardList: View {
                     }
                 }
             }
+            .navigationTitle("Cards")
         } detail: {
             Text("Select an item")
         }.task {

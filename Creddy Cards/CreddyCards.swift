@@ -28,17 +28,29 @@ struct CreddyCards: App {
 
     var body: some Scene {
         WindowGroup {
-            CreditCardList(viewModel: .init(
-                repository: ConcreteCreditCardRepository(
-                    modelContext: sharedModelContainer.mainContext,
-                    network: ConcreteJSONBasedNetwork(
-                        jsonDecoder: jsonDecoder,
-                        baseUrl: URL(string: "https://random-data-api.com")!
-                    ),
-                    maxItemsFromNetwork: 100
+            TabView {
+                CreditCardList(viewModel: .init(
+                    repository: ConcreteCreditCardRepository(
+                        modelContext: sharedModelContainer.mainContext,
+                        network: ConcreteJSONBasedNetwork(
+                            jsonDecoder: jsonDecoder,
+                            baseUrl: URL(string: "https://random-data-api.com")!
+                        ),
+                        maxItemsFromNetwork: 100
+                        )
                     )
                 )
-            )
+                .tabItem {
+                    Label("Cards", systemImage: "creditcard")
+                }
+                ContentUnavailableView(label: {
+                    Label("No Favourites", systemImage: "heart")
+                })
+                .tabItem {
+                    Label("Favourites", systemImage: "heart")
+                }
+            }
+            
         }
     }
 }
