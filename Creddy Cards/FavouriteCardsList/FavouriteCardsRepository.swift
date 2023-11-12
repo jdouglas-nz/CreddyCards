@@ -5,6 +5,7 @@ import SwiftData
 
 protocol FavouriteCardsRepository {
     func getFavourites() throws -> [CreditCard]
+    func toggleFavourite(card: CreditCard)
 }
 
 class ConcreteFavouriteCardsRepository: FavouriteCardsRepository {
@@ -21,6 +22,13 @@ class ConcreteFavouriteCardsRepository: FavouriteCardsRepository {
         }
         
         return try modelContext.fetch(FetchDescriptor<CreditCard>(predicate: predicate, sortBy: [.init(\.id, order: .forward)]))
+    }
+    
+    func toggleFavourite(card: CreditCard) {
+        if card.modelContext == nil {
+            modelContext.insert(card)
+        }
+        card.isFavourite.toggle()
     }
 }
 
@@ -41,6 +49,10 @@ class StubbedFavouriteCardsRepository: FavouriteCardsRepository {
     func getFavourites() throws -> [CreditCard] {
         try throwErrorIfNeeded()
         return cards
+    }
+    
+    func toggleFavourite(card: CreditCard) {
+        card.isFavourite.toggle()
     }
     
     private func throwErrorIfNeeded() throws {

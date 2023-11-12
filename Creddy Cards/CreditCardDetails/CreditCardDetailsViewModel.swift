@@ -16,12 +16,7 @@ extension CreditCardDetails {
         }
         
         func toggleFavourite() {
-            do {
-                try repository.toggleFavourite(card: creditCard)
-            } catch {
-                print("wat")
-            }
+            repository.toggleFavourite(card: creditCard)
         }
-        
     }
 }
