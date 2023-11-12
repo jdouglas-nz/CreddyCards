@@ -97,5 +97,5 @@ struct SeededRandomNumberGenerator: RandomNumberGenerator {
 }
 
 #Preview {
-    CreditCardDetails(viewModel: .init(creditCard: .init(id: 1, uid: UUID(uuidString: "1a9dd0dc-f513-4447-9000-cf4605d774e7")!, cardNumber: "1234-1234-1234-1234", expiry: Date.now, type: .americanExpress, isFavourite: false), repository: StubbedCreditCardRepository()))
+    CreditCardDetails(viewModel: .init(creditCard: .init(id: 1, uid: UUID(uuidString: "1a9dd0dc-f513-4447-9000-cf4605d774e7")!, cardNumber: "1234-1234-1234-1234", expiry: Date.now, type: .americanExpress, isFavourite: false), repository: StubbedFavouriteCardsRepository(cards: [])))
 }

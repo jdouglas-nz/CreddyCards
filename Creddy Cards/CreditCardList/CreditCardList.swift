@@ -3,7 +3,7 @@
 import SwiftUI
 
 struct CreditCardList: View {
-    
+        
     var viewModel: ViewModel
     
     var body: some View {
@@ -14,12 +14,21 @@ struct CreditCardList: View {
                     ProgressView()
                 case let .loaded(creditCards):
                     List {
-                        ForEach(creditCards) { card in
-                            NavigationLink {
-                                CreditCardDetails(viewModel: .init(creditCard: card, repository: viewModel.repository))
-                            } label: {
-                                Text("\(card.cardNumber) \(card.favouriteText)")
+                        ForEach(Array(creditCards.keys).sorted(by: sortedBy), id: \.hashValue) { type in
+                            Section {
+                                ForEach(creditCards[type]!) { card in
+                                    NavigationLink {
+                                        CreditCardDetails(viewModel: .init(creditCard: card, repository: ConcreteFavouriteCardsRepository(modelContext: CreddyCards.modelContext)))
+                                    } label: {
+                                        Text(card.summarizedText)
+                                            .font(.body)
+                                    }
+                                }
+                            } header: {
+                                Text(type.displayText)
+                                    .font(.headline)
                             }
+
                         }
                     }
                     .refreshable {
@@ -43,6 +52,10 @@ struct CreditCardList: View {
         }.task {
             refresh()
         }
+    }
+    
+    private func sortedBy(this: CreditCardType, that: CreditCardType) -> Bool {
+        this.rawValue > that.rawValue
     }
     
     private func contentUnavailable(title: String, systemImageName: String, description: String) -> ContentUnavailableView<some View, some View, some View> {

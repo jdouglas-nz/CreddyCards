@@ -10,7 +10,7 @@ extension FavouriteCardsList {
         
         var state: ViewState<[CreditCard]> = emptyListState
         
-        private var repository: FavouriteCardsRepository
+        var repository: FavouriteCardsRepository
         
         init(repository: FavouriteCardsRepository) {
             self.repository = repository

@@ -8,9 +8,9 @@ extension CreditCardDetails {
     class ViewModel {
         
         var creditCard: CreditCard
-        private var repository: CreditCardRepository
+        private var repository: FavouriteCardsRepository
         
-        init(creditCard: CreditCard, repository: CreditCardRepository) {
+        init(creditCard: CreditCard, repository: FavouriteCardsRepository) {
             self.creditCard = creditCard
             self.repository = repository
         }

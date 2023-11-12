@@ -34,14 +34,15 @@ class ConcreteFavouriteCardsRepository: FavouriteCardsRepository {
 
 #if DEBUG
 class StubbedFavouriteCardsRepository: FavouriteCardsRepository {
-    private let cards: [CreditCard]
     
+    private let cards: [CreditCard]
+    private let throwError: Bool
+
     enum StubError: Error {
         case testError
     }
     
-    let throwError: Bool
-        init(cards: [CreditCard], throwError: Bool = false) {
+    init(cards: [CreditCard], throwError: Bool = false) {
         self.cards = cards
         self.throwError = throwError
     }

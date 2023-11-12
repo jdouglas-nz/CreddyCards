@@ -38,7 +38,7 @@ enum CreddyCardSchemaV2: VersionedSchema {
     static let versionIdentifier = Schema.Version(2, 0, 0)
     
     @Model
-    final class CreditCard: CustomStringConvertible {
+    final class CreditCard {
         let id: Int
         @Attribute(.unique)
         let uid: UUID
@@ -56,8 +56,8 @@ enum CreddyCardSchemaV2: VersionedSchema {
             self.isFavourite = isFavourite
         }
         
-        var description: String {
-            "card \(cardNumber) (\(type)) expires on \(expiry)"
+        var summarizedText: String {
+            "\(cardNumber)"
         }
         
         var favouriteText: String {

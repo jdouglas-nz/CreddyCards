@@ -6,7 +6,7 @@ import SwiftData
 @main
 struct CreddyCards: App {
     
-    var sharedModelContainer: ModelContainer = {
+    static var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             CreditCard.self,
         ])
@@ -21,7 +21,7 @@ struct CreddyCards: App {
         }
     }()
     
-    var modelContext: ModelContext {
+    static var modelContext: ModelContext {
         let c = ModelContext(sharedModelContainer)
         c.autosaveEnabled = true
         return c
@@ -40,7 +40,7 @@ struct CreddyCards: App {
             TabView {
                 CreditCardList(viewModel: .init(
                     repository: ConcreteCreditCardRepository(
-                        modelContext: modelContext,
+                        modelContext: Self.modelContext,
                         network: ConcreteJSONBasedNetwork(
                             jsonDecoder: jsonDecoder,
                             baseUrl: URL(string: "https://random-data-api.com")!
@@ -52,7 +52,7 @@ struct CreddyCards: App {
                 .tabItem {
                     Label("Cards", systemImage: "creditcard")
                 }
-                FavouriteCardsList(viewModel: .init(repository: ConcreteFavouriteCardsRepository(modelContext: modelContext)))
+                FavouriteCardsList(viewModel: .init(repository: ConcreteFavouriteCardsRepository(modelContext: Self.modelContext)))
                 .tabItem {
                     Label("Favourites", systemImage: "heart")
                 }

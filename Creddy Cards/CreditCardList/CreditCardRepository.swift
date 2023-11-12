@@ -5,7 +5,6 @@ import SwiftData
 
 protocol CreditCardRepository {
     func getCreditCards() async throws -> [CreditCard]
-    func toggleFavourite(card: CreditCard)
 }
 
 
@@ -52,13 +51,6 @@ class ConcreteCreditCardRepository: CreditCardRepository {
             try await network.get(path: "api/v2/credit_cards?size=\(maxItemsFromNetwork)")
         }
     }
-    
-    func toggleFavourite(card: CreditCard) {
-        if card.modelContext == nil {
-            modelContext.insert(card)
-        }
-        card.isFavourite.toggle()
-    }
 }
 
 fileprivate extension CreditCardType {
@@ -100,16 +92,12 @@ class StubbedCreditCardRepository: CreditCardRepository {
         case testError
     }
     
-    let throwError: Bool
+    private var creditCards: [CreditCard]
+    private let throwError: Bool
     
-    init(throwError: Bool = false) {
+    init(cards: [CreditCard] = [], throwError: Bool = false) {
         self.throwError = throwError
-    }
-    
-    var creditCards = [CreditCard]()
-    
-    func toggleFavourite(card: CreditCard) {
-        card.isFavourite.toggle()
+        self.creditCards = cards
     }
     
     func getCreditCards() async throws -> [CreditCard] {
