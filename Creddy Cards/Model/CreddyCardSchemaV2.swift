@@ -28,7 +28,7 @@ enum CreddyCardSchemaV2: VersionedSchema {
         }
         
         var summarizedText: String {
-            "\(cardNumber)"
+            "\(cardNumber) \(favouriteText)"
         }
         
         var favouriteText: String {
