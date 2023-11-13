@@ -6,6 +6,7 @@ import SwiftData
 struct CreditCardList: View {
         
     var viewModel: ViewModel
+    @State private var sortGroupsAscending = false
     
     var body: some View {
         NavigationSplitView {
@@ -55,13 +56,30 @@ struct CreditCardList: View {
 
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                    sortGroupsAscending.toggle()
+                } label: {
+                    Label("Sort groups",
+                          systemImage: sortGroupsAscending ? "arrow.down" : "arrow.up"
+                    )
+                    .labelStyle(IconOnlyLabelStyle())
+                }
+                .contentTransition(.symbolEffect(.replace))
+            }
+        }
         .refreshable {
             refresh()
         }
     }
     
     private func sortedBy(this: CreditCardType, that: CreditCardType) -> Bool {
-        this.rawValue > that.rawValue
+        return if sortGroupsAscending {
+            this.rawValue < that.rawValue
+        } else {
+            this.rawValue > that.rawValue
+        }
     }
     
     private func contentUnavailable(title: String, systemImageName: String, description: String) -> ContentUnavailableView<some View, some View, some View> {

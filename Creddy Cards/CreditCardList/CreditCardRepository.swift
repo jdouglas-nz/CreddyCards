@@ -25,7 +25,9 @@ class ConcreteCreditCardRepository: CreditCardRepository {
     
     func getCreditCards() async throws -> [CreditCard] {
         let cachedCards = try getCachedCards()
-        let cardsFromNetwork = try await getCardsFromNetwork()
+        let cardsFromNetwork = try await getCardsFromNetwork().sorted { this, that in
+            this.id < that.id
+        }
         
         return cachedCards + cardsFromNetwork.map({ c in
                 .init(
